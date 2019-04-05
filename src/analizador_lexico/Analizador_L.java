@@ -5,12 +5,12 @@ public class Analizador_L{
     
     public static void main(String[] args) {                       
         Ventana v1 = new Ventana();
-        v1.setVisible(true);  
-        
+        v1.setVisible(true);         
     }
     
-    public static void error_message(){        
-        JOptionPane.showMessageDialog(null, "Ups, algo salió mal", "Error", JOptionPane.ERROR_MESSAGE);
+    public void error_message(String errorType){
+        String error = "El error se debe a "+errorType;
+        JOptionPane.showMessageDialog(null, error, "Error", JOptionPane.ERROR_MESSAGE);
     }
         
 }
