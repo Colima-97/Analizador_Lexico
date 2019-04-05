@@ -1,6 +1,9 @@
 package analizador_lexico;
-import java.awt.Color;
+
 //import java.awt.SystemColor;
+import java.awt.Color;
+import java.awt.Image;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
 public class Ventana extends JFrame{
@@ -9,6 +12,8 @@ public class Ventana extends JFrame{
         setSize(600,600);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setTitle("Analizador Léxico");
+        Image icon = new ImageIcon(getClass().getResource("/resources/coco.png")).getImage();   
+        setIconImage(icon);
         setLocationRelativeTo(null);
         setResizable(false);
         Lamina miLamina=new Lamina();

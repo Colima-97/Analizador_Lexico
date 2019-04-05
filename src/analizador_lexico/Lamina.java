@@ -12,7 +12,7 @@ public class Lamina extends JPanel{
     public void paintComponent(Graphics g){
         super.paintComponent(g);        
         
-        Graphics2D g2=(Graphics2D) g;
+        Graphics2D g2 = (Graphics2D) g;
         /*
         Rectangle2D rectangulo = new Rectangle2D.Double(50,55,500,450);
         g2.setPaint(Color.BLACK);
@@ -24,7 +24,8 @@ public class Lamina extends JPanel{
         elipse.setFrame(rectangulo);
         g2.setPaint(new Color(250,128,114));
         g2.fill(elipse);
-        */         
+        */
+        
         Font miFuente=new Font("Times New Roman",Font.BOLD,24);
         //g2.setColor(Color.DARK_GRAY); //Quito el color, pues puse el Foreground en el constructor JFrame
         g2.setFont(miFuente);
