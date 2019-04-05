@@ -1,6 +1,5 @@
 package analizador_lexico;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
+import javax.swing.*;
 
 public class Ventana extends JFrame{
     
@@ -9,10 +8,8 @@ public class Ventana extends JFrame{
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setTitle("Analizador Léxico");
         setLocationRelativeTo(null);
-    }
-    
-    private void iniciarComponentes(){
-        JPanel panel = new JPanel();
-    }
+        Lamina miLamina=new Lamina();
+        add(miLamina);
+    }    
     
 }
