@@ -15,6 +15,7 @@ public class Ventana extends JFrame{
         add(miLamina);        
         //miLamina.setBackground(SystemColor.window);     //Color por defecto del sistema operativo
         miLamina.setBackground(new Color(146,163,255));//Un color lindo
+        miLamina.setForeground(Color.DARK_GRAY);    //Aseguro de un único color (no el Background) el JPanel
     }    
     
 }
