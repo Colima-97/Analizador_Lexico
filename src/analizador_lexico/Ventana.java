@@ -1,5 +1,7 @@
 package analizador_lexico;
-import javax.swing.*;
+import java.awt.Color;
+//import java.awt.SystemColor;
+import javax.swing.JFrame;
 
 public class Ventana extends JFrame{
     
@@ -8,8 +10,11 @@ public class Ventana extends JFrame{
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setTitle("Analizador Léxico");
         setLocationRelativeTo(null);
+        setResizable(false);
         Lamina miLamina=new Lamina();
-        add(miLamina);
+        add(miLamina);        
+        //miLamina.setBackground(SystemColor.window);     //Color por defecto del sistema operativo
+        miLamina.setBackground(new Color(146,163,255));//Un color lindo
     }    
     
 }

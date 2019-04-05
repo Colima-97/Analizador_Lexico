@@ -6,7 +6,7 @@ public class Analizador_L{
     static  MyIcon icon;
     public static void main(String[] args) {                       
         Ventana v1 = new Ventana();
-        v1.setVisible(true);       
+        v1.setVisible(true);  
         
     }
     
