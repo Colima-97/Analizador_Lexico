@@ -14,26 +14,39 @@ public class Lamina extends JPanel implements ActionListener{
     protected JTextField jtfCadena;
     protected JButton jbtnOK;
     protected JTextArea jtaMostrar;
+    protected JScrollPane jspScroll;
     
     public Lamina(){
         setLayout(null);
         
+        //TextFields
         jtfCadena = new JTextField();
         jtfCadena.addActionListener(this);
-        add(jtfCadena);        
+        jtfCadena.setFont(new Font("Times New Roman",Font.BOLD,20));
+        jtfCadena.setSelectionColor(Color.YELLOW);                
         jtfCadena.setBounds(50, 55, 380, 50);
+        add(jtfCadena);
         
-        jbtnOK = new JButton("Enter");
+        //JButton
+        jbtnOK = new JButton();
         jbtnOK.addActionListener(this);
-        add(jbtnOK);        
+        jbtnOK.setText("Enter");
+        jbtnOK.setFont(new Font("Times New Roman",Font.BOLD,20));                        
         jbtnOK.setBounds(450, 55, 100, 50);
-
+        add(jbtnOK);
+        
+        //TextArea
         jtaMostrar = new JTextArea();
-        jtaMostrar.setEditable(false);
-        add(jtaMostrar);        
-        jtaMostrar.setBounds(50,100,100,300);
-        jtaMostrar.setText("Hello there");
-        JScrollPane scrollPane = new JScrollPane(jtaMostrar);
+        jtaMostrar.setFont(new Font("Times New Roman",Font.BOLD,18));
+        jtaMostrar.setEditable(false);  
+        jtaMostrar.setLineWrap(true);
+        
+        //ScrollPane
+        jspScroll = new JScrollPane(jtaMostrar);
+        jspScroll.setBounds(50,130,500,400);
+        add(jspScroll);        
+              
+        
         
     }
     
@@ -64,7 +77,9 @@ public class Lamina extends JPanel implements ActionListener{
     //Este método se implementa para escuchar los eventos
     @Override
     public void actionPerformed(ActionEvent ae) {        
-        
+        String cadena = jtfCadena.getText();
+        jtaMostrar.append(cadena+"\n");
+        jtfCadena.setText("");
     }
         
 }
