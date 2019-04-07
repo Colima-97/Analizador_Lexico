@@ -82,10 +82,24 @@ public class Lamina extends JPanel implements ActionListener{
         if(cadena.trim().isEmpty()){
             
         }else{
-            jtaMostrar.setText(cadena.trim());
+            //jtaMostrar.append(cadena.trim()+"\n");
+            jtaMostrar.setText(cadena.trim()+"\n");            
             jtfCadena.setText("");
+            
+            //recibirCadena(cadena);
         }
         
     }
         
 }
+/*
+
+Arrays.
+L(a-zA-Z);              //Letras
+D(1-9);                 //Dígitos
+R(if,else,for,null,while);    //Palabras reservadas
+V({$}{L}({L|D})*) --> {{L}({L|D})*{$}} -->("¿Quizás quiso decir $%%%%?")
+
+El resto que sea error o caracter no encontrado.
+
+*/
