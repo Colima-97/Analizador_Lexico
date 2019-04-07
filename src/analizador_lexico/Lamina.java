@@ -30,8 +30,8 @@ public class Lamina extends JPanel implements ActionListener{
         //JButton
         jbtnOK = new JButton();
         jbtnOK.addActionListener(this);
-        jbtnOK.setText("Enter");
-        jbtnOK.setFont(new Font("Times New Roman",Font.BOLD,20));                        
+        jbtnOK.setText("Analizar");
+        jbtnOK.setFont(new Font("Times New Roman",Font.BOLD,15));                        
         jbtnOK.setBounds(450, 55, 100, 50);
         add(jbtnOK);
         
@@ -77,9 +77,15 @@ public class Lamina extends JPanel implements ActionListener{
     //Este método se implementa para escuchar los eventos
     @Override
     public void actionPerformed(ActionEvent ae) {        
-        String cadena = jtfCadena.getText();
-        jtaMostrar.append(cadena+"\n");
-        jtfCadena.setText("");
+        String cadena = jtfCadena.getText();                    
+        
+        if(cadena.trim().isEmpty()){
+            
+        }else{
+            jtaMostrar.setText(cadena.trim());
+            jtfCadena.setText("");
+        }
+        
     }
         
 }
