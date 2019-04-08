@@ -83,10 +83,10 @@ public class Lamina extends JPanel implements ActionListener{
             
         }else{
             //jtaMostrar.append(cadena.trim()+"\n");
-            jtaMostrar.setText(cadena.trim()+"\n");            
+            Analizador_kernel analizar = new Analizador_kernel();   
+            String nueva_cadena = analizar.AnalizarCodigo(cadena.trim());
+            jtaMostrar.setText(nueva_cadena);            
             jtfCadena.setText("");
-            
-            //recibirCadena(cadena);
         }
         
     }
