@@ -53,25 +53,11 @@ public class Lamina extends JPanel implements ActionListener{
     //Método usado para dibujar
     public void paintComponent(Graphics g){
         super.paintComponent(g);        
-        
         Graphics2D g2 = (Graphics2D) g;
-        /*
-        Rectangle2D rectangulo = new Rectangle2D.Double(50,55,500,450);
-        g2.setPaint(Color.BLACK);
-        g2.draw(rectangulo);
-        g2.setPaint(new Color(95,158,160));
-        g2.fill(rectangulo);
-        
-        Ellipse2D elipse = new Ellipse2D.Double();
-        elipse.setFrame(rectangulo);
-        g2.setPaint(new Color(250,128,114));
-        g2.fill(elipse);
-        */
-        
         Font miFuente=new Font("Times New Roman",Font.BOLD,24);
         //g2.setColor(Color.DARK_GRAY); //Quito el color, pues puse el Foreground en el constructor JFrame
         g2.setFont(miFuente);
-        g2.drawString("Escriba una cadena", 50, 50);                        
+        g2.drawString("Escriba una cadena", 50, 50);                 
     }
     
     //Este método se implementa para escuchar los eventos
@@ -80,7 +66,7 @@ public class Lamina extends JPanel implements ActionListener{
         String cadena = jtfCadena.getText();                    
         
         if(cadena.trim().isEmpty()){
-            
+            jtfCadena.setText("");
         }else{
             //jtaMostrar.append(cadena.trim()+"\n");
             Analizador_kernel analizar = new Analizador_kernel();   
@@ -92,14 +78,3 @@ public class Lamina extends JPanel implements ActionListener{
     }
         
 }
-/*
-
-Arrays.
-L(a-zA-Z);              //Letras
-D(1-9);                 //Dígitos
-R(if,else,for,null,while);    //Palabras reservadas
-V({$}{L}({L|D})*) --> {{L}({L|D})*{$}} -->("¿Quizás quiso decir $%%%%?")
-
-El resto que sea error o caracter no encontrado.
-
-*/
