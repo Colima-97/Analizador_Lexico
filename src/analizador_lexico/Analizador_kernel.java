@@ -13,40 +13,40 @@ public class Analizador_kernel {
     
     
     public String AnalizarCodigo(String codigo){
+        codigo+=" ";
         String separador = "";
         String resultado = "";
         int i=0;
         while(i<codigo.length()){
-            char c = codigo.charAt(i);
-            switch (c) {
-                case ' ': case '\t': case '\n': case '\r': case '\f': case'(': case')':
-                    if(!separador.isEmpty()){
-                        String token = verificarToken(separador);
-                        resultado += separador + ": Es un(a) " + token + "\n";
-                        separador = "";
-                    }
-                    break;
-                case '=': case '+': case '-': case '*': case '/':
-                    if(!separador.isEmpty()){
-                        String token = verificarToken(separador);
-                        String operador = verificarOperador(c);
-                        resultado += separador + ": Es un(a) " + token + "\n";
-                        resultado += c + ": Es un " + operador + "\n";
-                        separador = "";
-                    }else{
-                        String operador = verificarOperador(c);
-                        resultado += c + ": Es un " + operador + "\n";
-                    }
-                    break;
-                default:
-                    separador += c;
-            }
+                char c = codigo.charAt(i);
+                switch (c) {
+                    case ' ': case '\t': case '\n': case '\r': case '\f': case'(': case')':
+                        if(!separador.isEmpty()){
+                            String token = verificarToken(separador);
+                            resultado += separador + ": Es un(a) " + token + "\n";
+                            separador = "";
+                        }
+                        break;
+                    case '=': case '+': case '-': case '*': case '/':
+                        if(!separador.isEmpty()){
+                            String token = verificarToken(separador);
+                            String operador = verificarOperador(c);
+                            resultado += separador + ": Es un(a) " + token + "\n";
+                            resultado += c + ": Es un " + operador + "\n";
+                            separador = "";
+                        }else{
+                            String operador = verificarOperador(c);
+                            resultado += c + ": Es un " + operador + "\n";
+                        }
+                        break;
+                    default:
+                        separador += c;
+                }
             i++;
         };
-        
         return resultado;        
     }
-    private String verificarToken(String cadena){
+    private static String verificarToken(String cadena){
         String token;
         if(cadena.contains("$")){
             if(cadena.charAt(0)=='$'){
@@ -71,7 +71,7 @@ public class Analizador_kernel {
         }
         return token;
     }
-    private String verificarOperador(char c){
+    private static String verificarOperador(char c){
         String token;
         switch (c) {
             case '=': 
