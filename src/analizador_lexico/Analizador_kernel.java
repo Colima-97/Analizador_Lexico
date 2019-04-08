@@ -65,7 +65,7 @@ public class Analizador_kernel {
                 if(isNumeric(cadena)){
                     token = "Numero";
                 }else{
-                    token = "ERROR(Cadena no identificada)";
+                    token = "ERROR(Cadena no identificada. ¿No habras olvidado el simbolo $?)";
                 }
             }
         }
